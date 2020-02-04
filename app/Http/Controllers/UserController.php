@@ -184,13 +184,13 @@ class UserController extends Controller
                     $filename = $user->username.'.'.$image->getClientOriginalExtension();
                     if ($image->getClientOriginalExtension() != 'gif') {
                         $resize = Image::make($image->getRealPath())->fit(150, 150)->encode('png', 100);
-                        Storage::disk('images')->put($filename, $resize);
+                        Storage::disk('images')->put($filename, $resize->getEncoded());
                     } else {
                         $v = validator($request->all(), [
                             'image' => 'dimensions:ratio=1/1',
                         ]);
                         if ($v->passes()) {
-                            Storage::disk('images')->put($filename, $image);
+                            Storage::disk('images')->put($filename, file_get_contents($image));
                         } else {
                             return redirect()->route('users.show', ['username' => $user->username])
                                 ->withErrors('Because you are uploading a GIF, your avatar must be square!');

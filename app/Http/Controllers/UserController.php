@@ -182,9 +182,9 @@ class UserController extends Controller
             if (in_array($image->getClientOriginalExtension(), ['jpg', 'JPG', 'jpeg', 'bmp', 'png', 'PNG', 'tiff', 'gif']) && preg_match('#image/*#', $image->getMimeType())) {
                 if ($max_upload >= $image->getSize()) {
                     $filename = $user->username.'.'.$image->getClientOriginalExtension();
-                    $path = public_path('/files/img/'.$filename);
                     if ($image->getClientOriginalExtension() != 'gif') {
-                        Image::make($image->getRealPath())->fit(150, 150)->encode('png', 100)->save($path);
+                        $resize = Image::make($image->getRealPath())->fit(150, 150)->encode('png', 100);
+                        Storage::disk('images')->put($filename, $resize);
                     } else {
                         $v = validator($request->all(), [
                             'image' => 'dimensions:ratio=1/1',

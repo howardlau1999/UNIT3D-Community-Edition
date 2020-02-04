@@ -19,6 +19,7 @@ use App\Models\Torrent;
 use App\Repositories\ChatRepository;
 use App\Services\MovieScrapper;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 use Image;
 
 class PlaylistController extends Controller
@@ -80,8 +81,8 @@ class PlaylistController extends Controller
         if ($request->hasFile('cover_image') && $request->file('cover_image')->getError() == 0) {
             $image = $request->file('cover_image');
             $filename = 'playlist-cover_'.uniqid().'.'.$image->getClientOriginalExtension();
-            $path = public_path('/files/img/'.$filename);
-            Image::make($image->getRealPath())->fit(400, 225)->encode('png', 100)->save($path);
+            $resize = Image::make($image->getRealPath())->fit(400, 225)->encode('png', 100);
+            Storage::disk('images')->put($filename, $resize->getEncoded());
             $playlist->cover_image = $filename;
         }
 
@@ -195,8 +196,8 @@ class PlaylistController extends Controller
         if ($request->hasFile('cover_image') && $request->file('cover_image')->getError() == 0) {
             $image = $request->file('cover_image');
             $filename = 'playlist-cover_'.uniqid().'.'.$image->getClientOriginalExtension();
-            $path = public_path('/files/img/'.$filename);
-            Image::make($image->getRealPath())->fit(400, 225)->encode('png', 100)->save($path);
+            $resize = Image::make($image->getRealPath())->fit(400, 225)->encode('png', 100);
+            Storage::disk('images')->put($filename, $resize->getEncoded());
             $playlist->cover_image = $filename;
         }
 

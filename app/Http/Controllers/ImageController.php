@@ -50,10 +50,9 @@ class ImageController extends Controller
 
         $file = $request->file('image');
         $random_name = uniqid();
-        $destinationPath = public_path('/files/img/');
         $extension = $file->getClientOriginalExtension();
         $filename = 'album-image_'.$random_name.'.'.$extension;
-        $uploadSuccess = $request->file('image')->move($destinationPath, $filename);
+        Storage::disk('images')->put($filename, $file->getEncoded());
         $image->image = $filename;
 
         $v = validator($image->toArray(), [

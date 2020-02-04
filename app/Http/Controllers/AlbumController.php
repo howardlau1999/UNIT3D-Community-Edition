@@ -84,8 +84,8 @@ class AlbumController extends Controller
 
         $image = $request->file('cover_image');
         $filename = 'album-cover_'.uniqid().'.'.$image->getClientOriginalExtension();
-        $path = public_path('/files/img/'.$filename);
-        Image::make($image->getRealPath())->fit(400, 225)->encode('png', 100)->save($path);
+        $resize = Image::make($image->getRealPath())->fit(400, 225)->encode('png', 100);
+        Storage::disk('images')->put($filename, $resize->getEncoded());
         $album->cover_image = $filename;
 
         $v = validator($album->toArray(), [

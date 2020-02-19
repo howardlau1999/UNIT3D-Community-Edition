@@ -28,7 +28,7 @@ class CreateBonExchangeTable extends Migration
             $table->bigIncrements('id');
             $table->string('description')->nullable();
             $table->unsignedBigInteger('value')->default(0);
-            $table->unsignedInteger('cost')->default(0);
+            $table->unsignedBigInteger('cost')->default(0);
             $table->boolean('upload')->default(0);
             $table->boolean('download')->default(0);
             $table->boolean('personal_freeleech')->default(0);

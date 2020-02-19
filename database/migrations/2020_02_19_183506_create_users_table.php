@@ -38,12 +38,12 @@ class CreateUsersTable extends Migration
             $table->string('title')->nullable();
             $table->string('about', 500)->nullable();
             $table->text('signature')->nullable();
-            $table->unsignedInteger('fl_tokens')->default(0);
+            $table->unsignedBigInteger('fl_tokens')->default(0);
             $table->float('seedbonus', 12, 2)->default(0.00);
-            $table->unsignedInteger('invites')->default(0);
-            $table->unsignedInteger('hitandruns')->default(0);
+            $table->unsignedBigInteger('invites')->default(0);
+            $table->unsignedBigInteger('hitandruns')->default(0);
             $table->string('rsskey');
-            $table->unsignedInteger('chatroom_id')->default(1);
+            $table->unsignedBigInteger('chatroom_id')->default(1);
             $table->boolean('censor')->default(0);
             $table->boolean('chat_hidden')->default(0);
             $table->boolean('hidden')->default(0);
@@ -74,7 +74,7 @@ class CreateUsersTable extends Migration
             $table->unsignedBigInteger('deleted_by')->nullable();
             $table->nullableTimestamps();
             $table->string('locale')->default('en');
-            $table->unsignedInteger('chat_status_id')->default(1);
+            $table->unsignedBigInteger('chat_status_id')->default(1);
             $table->softDeletes();
         });
 

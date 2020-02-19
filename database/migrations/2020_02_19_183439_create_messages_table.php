@@ -26,10 +26,10 @@ class CreateMessagesTable extends Migration
     {
         Schema::create('messages', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->unsignedInteger('user_id');
-            $table->unsignedInteger('chatroom_id');
-            $table->unsignedInteger('receiver_id')->nullable();
-            $table->unsignedInteger('bot_id')->nullable();
+            $table->unsignedBigInteger('user_id');
+            $table->unsignedBigInteger('chatroom_id');
+            $table->unsignedBigInteger('receiver_id')->nullable();
+            $table->unsignedBigInteger('bot_id')->nullable();
             $table->text('message');
             $table->nullableTimestamps();
         });

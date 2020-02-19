@@ -26,7 +26,7 @@ class CreateOptionsTable extends Migration
     {
         Schema::create('options', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->unsignedInteger('poll_id');
+            $table->unsignedBigInteger('poll_id');
             $table->string('name');
             $table->integer('votes')->default(0);
             $table->nullableTimestamps();

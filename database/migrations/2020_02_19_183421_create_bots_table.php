@@ -45,9 +45,9 @@ class CreateBotsTable extends Migration
             $table->boolean('is_betbot')->default(0);
             $table->unsignedBigInteger('uploaded')->default(0);
             $table->unsignedBigInteger('downloaded')->default(0);
-            $table->unsignedInteger('fl_tokens')->default(0);
+            $table->unsignedBigInteger('fl_tokens')->default(0);
             $table->float('seedbonus', 12, 2)->default(0.00);
-            $table->unsignedInteger('invites')->default(0);
+            $table->unsignedBigInteger('invites')->default(0);
             $table->nullableTimestamps();
         });
 

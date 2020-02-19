@@ -26,8 +26,8 @@ class CreateBookmarksTable extends Migration
     {
         Schema::create('bookmarks', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->unsignedInteger('user_id');
-            $table->unsignedInteger('torrent_id');
+            $table->unsignedBigInteger('user_id');
+            $table->unsignedBigInteger('torrent_id');
             $table->nullableTimestamps();
         });
     }

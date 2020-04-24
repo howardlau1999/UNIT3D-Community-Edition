@@ -20,12 +20,12 @@ class UserMade800Posts extends Achievement
     /*
      * The achievement name
      */
-    public $name = '800Posts';
+    public $name = __('achievements.user-made-800-posts-name');
 
     /*
      * A small description for the achievement
      */
-    public $description = 'Wow! You have already made 800 posts!';
+    public $description = __('achievements.user-made-800-posts-desc');
 
     /*
      * The amount of "points" this user need to obtain in order to complete this achievement

@@ -20,12 +20,12 @@ class UserMade25Posts extends Achievement
     /*
      * The achievement name
      */
-    public $name = '25Posts';
+    public $name = __('achievements.user-made-25-posts-name');
 
     /*
      * A small description for the achievement
      */
-    public $description = 'Wow! You have already made 25 posts!';
+    public $description = __('achievements.user-made-25-posts-desc');
 
     /*
      * The amount of "points" this user need to obtain in order to complete this achievement

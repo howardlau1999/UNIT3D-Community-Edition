@@ -20,10 +20,10 @@ class UserMadeUpload extends Achievement
     /*
      * The achievement name
      */
-    public $name = 'FirstUpload';
+    public $name = __('achievements.user-made-upload-name');
 
     /*
      * A small description for the achievement
      */
-    public $description = 'Congratulations! You have made your first torrent upload!';
+    public $description = __('achievements.user-made-upload-desc');
 }

@@ -20,12 +20,12 @@ class UserFilled25Requests extends Achievement
     /*
      * The achievement name
      */
-    public $name = 'Filled25Requests';
+    public $name = __('achievements.user-filled-25-requests-name');
 
     /*
      * A small description for the achievement
      */
-    public $description = 'Congrats! You have already filled 25 requests!';
+    public $description = __('achievements.user-filled-25-requests-desc');
 
     /*
      * The amount of "points" this user need to obtain in order to complete this achievement

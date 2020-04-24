@@ -9,12 +9,12 @@ class UserUploaded400Subtitles extends Achievement
     /*
      * The achievement name
      */
-    public $name = 'UserUploaded400Subtitles';
+    public $name = __('achievements.user-uploaded-400-subtitles-name');
 
     /*
      * A small description for the achievement
      */
-    public $description = 'You have made 400 subtitle uploads!';
+    public $description = __('achievements.user-uploaded-400-subtitles-desc');
 
     /*
     * The amount of "points" this user need to obtain in order to complete this achievement

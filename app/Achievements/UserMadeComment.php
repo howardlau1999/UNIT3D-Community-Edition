@@ -20,10 +20,10 @@ class UserMadeComment extends Achievement
     /*
      * The achievement name
      */
-    public $name = 'FirstComment';
+    public $name = __('achievements.user-made-comment-name');
 
     /*
      * A small description for the achievement
      */
-    public $description = 'Congratulations! You have made your first comment!';
+    public $description = __('achievements.user-made-comment-desc');
 }

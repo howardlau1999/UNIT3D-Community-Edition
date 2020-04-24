@@ -20,12 +20,12 @@ class UserMade300Uploads extends Achievement
     /*
      * The achievement name
      */
-    public $name = '300Uploads';
+    public $name = __('achievements.user-made-300-uploads-name');
 
     /*
      * A small description for the achievement
      */
-    public $description = 'You have made 300 torrent uploads!';
+    public $description = __('achievements.user-made-300-uploads-desc');
 
     /*
      * The amount of "points" this user need to obtain in order to complete this achievement

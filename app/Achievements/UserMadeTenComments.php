@@ -20,12 +20,12 @@ class UserMadeTenComments extends Achievement
     /*
      * The achievement name
      */
-    public $name = '10Comments';
+    public $name = __('achievements.user-made-ten-comments-name');
 
     /*
      * A small description for the achievement
      */
-    public $description = 'Wow! You have already made 10 comments!';
+    public $description = __('achievements.user-made-ten-comments-desc');
 
     /*
      * The amount of "points" this user need to obtain in order to complete this achievement

@@ -20,10 +20,10 @@ class UserMadeFirstPost extends Achievement
     /*
      * The achievement name
      */
-    public $name = 'FirstPost';
+    public $name = __('achievements.user-made-first-post-name');
 
     /*
      * A small description for the achievement
      */
-    public $description = 'Congratulations! You have made your first post!';
+    public $description = __('achievements.user-made-first-post-desc');
 }

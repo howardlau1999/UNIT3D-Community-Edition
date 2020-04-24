@@ -20,12 +20,12 @@ class UserMade800Comments extends Achievement
     /*
      * The achievement name
      */
-    public $name = '800Comments';
+    public $name = __('achievements.user-made-800-comments-name');
 
     /*
      * A small description for the achievement
      */
-    public $description = 'Wow! You have already made 800 comments!';
+    public $description = __('achievements.user-made-800-comments-desc');
 
     /*
      * The amount of "points" this user need to obtain in order to complete this achievement

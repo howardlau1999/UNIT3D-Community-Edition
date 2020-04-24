@@ -9,12 +9,12 @@ class UserUploaded1000Subtitles extends Achievement
     /*
      * The achievement name
      */
-    public $name = 'UserUploaded1000Subtitles';
+    public $name = __('achievements.user-uploaded-1000-subtitles-name');
 
     /*
      * A small description for the achievement
      */
-    public $description = 'You have made 1000 subtitle uploads!';
+    public $description = __('achievements.user-uploaded-1000-subtitles-desc');
 
     /*
     * The amount of "points" this user need to obtain in order to complete this achievement
